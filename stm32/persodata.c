@@ -48,7 +48,7 @@ void pd_init (void) {
 
         eui = 0xffffffaa00000000ULL | hal_unique();
         memcpy(pd.deveui, &eui, 8);
-        //eui = 0xffffffbb00000000ULL;
+        eui = 0xffffffbb00000000ULL;
         memcpy(pd.joineui, &eui, 8);
         memcpy(pd.nwkkey, "@ABCDEFGHIJKLMNO", 16);
         memcpy(pd.appkey, "`abcdefghijklmno", 16);
