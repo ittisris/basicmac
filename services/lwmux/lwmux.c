@@ -264,6 +264,10 @@ static void reschedule_join (void) {
                 (state.jcnt < 6) ? sec2osticks(600) :	// first hour:    every 10 minutes
                 (state.jcnt < 12) ? sec2osticks(6000) :	// next 10 hours: every 100 minutes
                 sec2osticks(3600 * 12)			// after:         every 12 hours
+#elif defined(CFG_as923)
+                (state.jcnt < 10) ? sec2osticks(360) :  // first hour:    every 6 minutes
+                (state.jcnt < 20) ? sec2osticks(3600) : // next 10 hours: every hour
+                sec2osticks(3600 * 12)          // after:         every 12 hours
 #endif
                 ), join);
 }

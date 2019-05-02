@@ -3,9 +3,9 @@ TARGET := b_l072z_lrwan1
 #TARGET := nucleo_l053r8-sx1261mbed
 #TARGET := nucleo_l053r8-sx1262mbed
 
-VARIANTS := eu868 us915 hybrid simul
+VARIANTS := as923
 
-REGIONS.simul := eu868
+REGIONS.simul := as923
 TARGET.simul := unicorn
 
 
@@ -28,7 +28,7 @@ ifeq (simul,$(VARIANT))
 test: build-$(VARIANT)/$(PROJECT).hex
 	PYTHONPATH=$${PYTHONPATH}:$(TOPDIR)/tools/pylora:$(TOPDIR)/unicorn/simul \
 		   $(TOPDIR)/unicorn/simul/lwtest.py \
-		   -r EU868 \
+		   -r AS923 \
 		   -v -d -t \
 		   $(TESTOPTS) \
 		   $(BL)/build/boards/$(BL_BRD)/bootloader.hex \

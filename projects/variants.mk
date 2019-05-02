@@ -3,7 +3,7 @@
 # This file is subject to the terms and conditions defined in file 'LICENSE',
 # which is part of this source code package.
 
-VARIANTS ?= eu868
+VARIANTS ?= as923
 
 RVARIANT	:= $(VARIANT)
 
@@ -19,10 +19,7 @@ VTARGETS	:= $(addprefix variant-,$(VARIANTS))
 
 # settings for "well-known" variants
 
-REGIONS.eu868	:= eu868
-REGIONS.us915	:= us915
-
-REGIONS.hybrid	?= eu868 us915
+REGIONS.as923	:= as923
 
 ifneq (,$(REGIONS.$(VARIANT)))
     REGIONS = $(REGIONS.$(VARIANT))
